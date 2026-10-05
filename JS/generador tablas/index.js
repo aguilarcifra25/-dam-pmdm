@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     });
 
-    $('.delRow').on('click', function () {
+    $('tbody').on('click', '.delRow', function () {
 
         $(this).closest('tr').remove();
 
