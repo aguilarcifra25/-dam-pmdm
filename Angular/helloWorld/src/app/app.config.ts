@@ -12,5 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     importProvidersFrom(NgbModule),
+    importProvidersFrom(NgbModule),
+    importProvidersFrom(NgbModule),
   ],
 };
