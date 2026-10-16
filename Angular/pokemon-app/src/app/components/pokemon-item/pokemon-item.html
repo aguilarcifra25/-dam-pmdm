@@ -1,0 +1,22 @@
+<div class="card h-100 shadow-sm">
+    <img class="card-img-top pokemon-img" [src]="pokemon()?.photoURL" alt="Bulbasaur">
+    <div class="card-body d-flex flex-column">
+
+        <h3 class="card-title text-center">{{pokemon()?.name}}</h3>
+
+        <div class="d-flex justify-content-center gap-4 mt-3">
+            <span class="badge bg-planta p-2 text-dark">{{pokemon()?.type1}}</span>
+            <span class="badge bg-veneno p-2 text-dark">{{pokemon()?.type2}}</span>
+        </div>
+
+        <div class="row text-center m-3 mt-4">
+            <span class="text-secondary col-4">#{{pokemon()?.dexNumber}}</span>
+            <span class="text-secondary col-4 border-secondary border-start border-end">Alto
+                {{pokemon()?.height}}</span>
+            <span class="text-secondary col-4">Peso {{pokemon()?.weight}}</span>
+        </div>
+
+        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+            data-bs-target="#modalBulbasaur">Ver más</button>
+    </div>
+</div>
