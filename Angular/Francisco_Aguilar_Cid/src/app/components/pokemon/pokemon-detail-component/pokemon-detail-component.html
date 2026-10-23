@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    @if (pokemon(); as poke) {
+    <div class="card text-center shadow" style="width: 18rem;">
+        <img [src]="poke.sprites.front_default" [alt]="poke.name" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title text-capitalize">#{{ poke.id }} {{ poke.name }}</h5>
+            <p class="card-text">
+                Altura: {{ poke.height / 10 }} m<br />
+                Peso: {{ poke.weight / 10 }} kg
+            </p>
+            @for (t of poke.types; track t.type.name) {
+            <span class="badge bg-secondary me-1">{{ t.type.name }}</span>
+            }
+        </div>
+    </div>
+    } @else {
+    <p>Cargando...</p>
+    }
+</div>

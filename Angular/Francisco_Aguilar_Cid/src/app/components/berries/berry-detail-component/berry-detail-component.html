@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    @if (berry(); as b) {
+    <div class="card text-center shadow" style="width: 18rem;">
+        <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/' + b.item.name + '.png'"
+            [alt]="b.name" class="card-img-top p-4" style="image-rendering: pixelated;" />
+        <div class="card-body">
+            <h5 class="card-title text-capitalize">#{{ b.id }} {{ b.name }}</h5>
+            <p class="card-text">
+                Tiempo de crecimiento: {{ b.growth_time }} h<br />
+                Cosecha máxima: {{ b.max_harvest }}<br />
+                Tamaño: {{ b.size }} mm<br />
+                Firmeza: <span class="text-capitalize">{{ b.firmness.name }}</span><br />
+            </p>
+            @for (f of b.flavors; track f.flavor.name) {
+            @if (f.potency > 0) {
+            <span class="badge bg-secondary me-1 text-capitalize">{{ f.flavor.name }}: {{ f.potency }}</span>
+            }
+            }
+        </div>
+    </div>
+    } @else {
+    <p>Cargando...</p>
+    }
+</div>

@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    @if (item(); as i) {
+    <div class="card text-center shadow" style="width: 18rem;">
+        @if (i.sprites.default) {
+        <img [src]="i.sprites.default" [alt]="i.name" class="card-img-top p-4" />
+        }
+        <div class="card-body">
+            <h5 class="card-title text-capitalize">{{ i.name.replaceAll('-', ' ') }}</h5>
+            <p class="card-text">
+                Categoría: <span class="text-capitalize">{{ i.category.name.replaceAll('-', ' ') }}</span>
+            </p>
+            <p class="card-text small text-muted">{{ description(i) }}</p>
+            @for (a of i.attributes; track a.name) {
+            <span class="badge bg-secondary me-1">{{ a.name }}</span>
+            }
+        </div>
+    </div>
+    } @else {
+    <p>Cargando...</p>
+    }
+</div>

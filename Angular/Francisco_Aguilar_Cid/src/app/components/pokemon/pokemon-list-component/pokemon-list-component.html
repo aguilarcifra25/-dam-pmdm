@@ -1,0 +1,9 @@
+<div class="container">
+
+    <div class="row">
+        @for (pokemon of pokemonList(); track getPokemonId(pokemon.url)) {
+        <app-pokemon-item-component [pokemon]="pokemon" class="col-4 my-4"></app-pokemon-item-component>
+        }
+    </div>
+
+</div>

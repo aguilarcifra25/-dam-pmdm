@@ -1,0 +1,9 @@
+<div class="container">
+
+    <div class="row">
+        @for (item of itemList(); track getItemId(item.url)) {
+        <app-item-item-component [item]="item" class="col-4 my-4"></app-item-item-component>
+        }
+    </div>
+
+</div>

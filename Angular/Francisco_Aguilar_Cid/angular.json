@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "Francisco_Aguilar_Cid": {
+    "pokemonRouting": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -55,10 +55,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Francisco_Aguilar_Cid:build:production"
+              "buildTarget": "pokemonRouting:build:production"
             },
             "development": {
-              "buildTarget": "Francisco_Aguilar_Cid:build:development"
+              "buildTarget": "pokemonRouting:build:development"
             }
           },
           "defaultConfiguration": "development"

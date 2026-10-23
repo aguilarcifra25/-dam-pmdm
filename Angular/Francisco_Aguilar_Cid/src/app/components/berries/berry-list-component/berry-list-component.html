@@ -1,0 +1,9 @@
+<div class="container">
+
+    <div class="row">
+        @for (berry of berriesList(); track getBerryId(berry.url)) {
+        <app-berry-item-component [berry]="berry" class="col-4 my-4"></app-berry-item-component>
+        }
+    </div>
+
+</div>

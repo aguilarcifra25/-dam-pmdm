@@ -1,0 +1,12 @@
+<div class="card h-100 shadow-sm">
+    <div class="card-body d-flex flex-column">
+
+        <img [src]="getImage(berry()!.name)" class="card-img-top p-3" loading="lazy" />
+
+
+        <h3 class="card-title text-center">{{berry()?.name}}</h3>
+
+        <button type="button" class="btn btn-primary mt-3" [routerLink]="['/berry-detail', getId(berry()!.url)]">Ver
+            más</button>
+    </div>
+</div>
