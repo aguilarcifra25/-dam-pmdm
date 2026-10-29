@@ -1,0 +1,25 @@
+<ngb-progressbar class="mb-3" [type]="type" [value]="value"></ngb-progressbar>
+
+<div class="form-field">
+
+    <div>
+        <label>Introduce el progreso de la barra</label>
+        <input type="number" min="0" max="100" class="form-control mt-2" style="max-width: 100px;"
+            [(ngModel)]="inputValue">
+    </div>
+
+    <div class="mt-3">
+        <label for="fieldText" class="form-label">Seleccione el color de la barra</label>
+        <select class="form-select" id="fieldText" style="max-width: 200px;" [(ngModel)]="inputType">
+            <option value="success">Verde</option>
+            <option value="info">Celeste</option>
+            <option value="warning">Amarillo</option>
+            <option value="danger">Rojo</option>
+        </select>
+
+    </div>
+
+    <div>
+        <button class="btn btn-primary mt-4 col-3" (click)="sendForm()">Enviar</button>
+    </div>
+</div>
