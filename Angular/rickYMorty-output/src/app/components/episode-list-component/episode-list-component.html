@@ -1,0 +1,12 @@
+<div class="container mt-3">
+
+    <div class="row">
+
+        @for(episode of episodeList(); track episode.id) {
+        <app-episode-item-component [episodeInput]="episode" class="col-3 mb-3"
+            (episodeClicked)="openEpisodeModal($event)"></app-episode-item-component>
+        }
+
+    </div>
+
+</div>
