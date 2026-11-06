@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title">Film details</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+    <div class="text-center mb-4">
+        <h3>{{ filmDetail?.title }}</h3>
+        <h4>({{ filmDetail?.episode_id }})</h4>
+    </div>
+    <div>
+        <p>{{filmDetail?.created}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" (click)="activeModal.close()">Close</button>
+    </div>

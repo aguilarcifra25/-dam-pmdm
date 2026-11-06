@@ -1,0 +1,14 @@
+<div class="container">
+
+    <div class="row">
+
+        @for (film of filmList(); track film.title) {
+
+        <app-film-item-component [filmInput]="film" class="col-3 m-4"
+            (filmClicked)="openFilmModal($event)"></app-film-item-component>
+
+        }
+
+    </div>
+
+</div>
