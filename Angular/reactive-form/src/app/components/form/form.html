@@ -1,0 +1,71 @@
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-3 d-flex flex-column">
+            <label for="title" class="mb-1">Title: </label>
+            <input id="title" type="text" [formControl]="title" />
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-2 d-flex flex-column">
+            <label for="category" class="mb-1">Category: </label>
+            <select id="category" [formControl]="category">
+                <option value="Tecnología">Tecnología</option>
+                <option value="Diseño">Diseño</option>
+                <option value="Programación">Programación</option>
+                <option value="Novedades">Novedades</option>
+            </select>
+        </div>
+
+        <div class="col-2 d-flex flex-column">
+            <label for="tags" class="mb-1">Tags: </label>
+            <input id="tags" type="text" [formControl]="tags" />
+        </div>
+
+        <div class="col-4 d-flex flex-column">
+            <label for="email" class="mb-1">Email: </label>
+            <input id="email" type="email" [formControl]="email" />
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-8 d-flex flex-column">
+                <label for="description" class="mb-1">Description: </label>
+                <textarea id="description" style="max-height: 200px;" [formControl]="description"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="col-5 d-flex">
+                <input type="radio" id="ahora" name="publicar" value="ahora">
+                <label for="ahora" class="ms-2 me-5">Publicar ahora</label><br>
+                <input type="radio" id="fecha" name="publicar" value="fecha">
+                <label for="fecha" class="ms-2">Publicar en otra fecha</label><br>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-2">
+            <div class="input-group mt-3">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [formControl]="date" ngbDatepicker
+                    #d="ngbDatepicker" />
+                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                    <ng-icon name="phosphorCalendarDotsDuotone" />
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <button type="button" class="btn btn-primary mt-3">Enviar</button>
+
+</div>
