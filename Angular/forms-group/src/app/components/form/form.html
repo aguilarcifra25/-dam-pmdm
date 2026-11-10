@@ -1,0 +1,59 @@
+<form class="mt-3" [formGroup]="form">
+
+    <div class="row">
+
+        <div class="mb-3 col-3">
+            <label for="title" class="form-label">Título:</label>
+            <input type="text" class="form-control" id="title" name="title" formControlName="title">
+        </div>
+
+        <div class="mb-3 col-4">
+            <label for="email" class="form-label">Email del autor:</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email">
+        </div>
+
+        <div class="mb-3 col-2">
+            <label for="category" class="form-label">Categoría:</label>
+            <select class="form-select" id="category" name="category" formControlName="category">
+                <option value=" 1">Tecnología</option>
+                <option value="2">Diseño</option>
+                <option value="3">Programación</option>
+                <option value="4">Novedades</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Descripción:</label>
+        <textarea class="form-control" id="description" name="description" rows="3" style="max-height: 200px;"
+            formControlName="description"></textarea>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="tags" class="form-label">Etiquetas:</label>
+        <input type="text" class="form-control" id="tags" name="tags" formControlName="tags">
+    </div>
+
+    <div class="row">
+
+        <div class="form-check form-check-inline col-2">
+            <label class="form-check-label" for="publishOtherDay">Programar fecha</label>
+            <input class="form-check-input" type="checkbox" id="publishOtherDay" name="publishOtherDay"
+                formControlName="publishOtherDay" (click)="mostrarDate()">
+
+        </div>
+
+        @if (date) {
+        <div class="col-2">
+            <label for="publishDate" class="form-label">Fecha de publicación:</label>
+            <input type="datetime-local" class="form-control" id="publishDate" name="publishDate"
+                formControlName="publishDate">
+        </div>
+        }
+
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="enviar()">Guardar</button>
+</form>
