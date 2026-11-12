@@ -1,0 +1,101 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Formulario de Registro</h4>
+                </div>
+                <div class="card-body">
+
+                    <form [formGroup]="registerForm">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" id="nombre" class="form-control" formControlName="nombre"
+                                    [class.is-invalid]="registerForm.get('nombre')?.invalid && registerForm.get('nombre')?.touched">
+                                @if (registerForm.get('nombre')?.errors?.['required']) {
+                                <div class="invalid-feedback">El nombre es obligatorio.</div>
+                                }
+                                @if (registerForm.get('nombre')?.errors?.['minlength']) {
+                                <div class="invalid-feedback">Mínimo 2 caracteres.</div>
+                                }
+                                @if (registerForm.get('nombre')?.errors?.['maxlength']) {
+                                <div class="invalid-feedback">Máximo 30 caracteres.</div>
+                                }
+                                @if (registerForm.get('nombre')?.errors?.['pattern']) {
+                                <div class="invalid-feedback">Solo se permiten letras</div>
+                                }
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="apellidos" class="form-label">Apellidos</label>
+                                <input type="text" id="apellidos" class="form-control" formControlName="apellidos">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="dni" class="form-label">DNI / NIE</label>
+                                <input type="text" id="dni" class="form-control" formControlName="dni">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="tel" class="form-label">Teléfono móvil</label>
+                                <input type="tel" id="tel" class="form-control" formControlName="tel">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="usuario" class="form-label">Nombre de usuario</label>
+                                <input type="text" id="usuario" class="form-control" formControlName="usuario">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" id="email" class="form-control" formControlName="email">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pw" class="form-label">Contraseña</label>
+                            <input type="password" id="pw" class="form-control" formControlName="pw">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cursoInteres" class="form-label">Curso de interés</label>
+                            <select id="cursoInteres" class="form-select" formControlName="cursoInteres">
+                                <option value="" disabled selected>Selecciona un curso...</option>
+                                <option value="angular">Desarrollo Frontend con Angular</option>
+                                <option value="fullstack">Desarrollo Web Full Stack</option>
+                                <option value="uxui">Diseño UX/UI</option>
+                                <option value="data">Ciencia de Datos e IA</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="horasSemana" class="form-label">Horas disponibles / semana</label>
+                                <input type="number" id="horasSemana" class="form-control"
+                                    formControlName="horasSemana">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="codigoPostal" class="form-label">Código Postal</label>
+                                <input type="text" id="codigoPostal" class="form-control"
+                                    formControlName="codigoPostal">
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
