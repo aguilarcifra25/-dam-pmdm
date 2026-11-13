@@ -1,0 +1,210 @@
+<div class="container mt-5">
+
+    <form [formGroup]="registerForm">
+
+        <div class="row">
+
+            <div class="col-2">
+                <label for="nombre" class="form-label">Nombre: </label>
+                <input id="nombre" type="text" formControlName="nombre" class="form-control"
+                    [class.is-invalid]="isInvalid('nombre')" />
+
+                @if (registerForm.get('nombre')?.errors?.['pattern']) {
+                <div class="invalid-feedback">Solo se permiten letras</div>
+                }
+
+                @else if (registerForm.get('nombre')?.errors?.['minLength']) {
+                <div class="invalid-feedback">Mínimo 2 caracteres</div>
+
+                } @else if (registerForm.get('nombre')?.errors?.['maxLength']) {
+                <div class="invalid-feedback">Máximo 30 caracteres</div>
+
+                } @else if (isInvalid('nombre')) {
+                <div class="invalid-feedback">El nombre es obligatorio</div>
+                }
+            </div>
+
+            <div class="col-2">
+                <label for="apellidos" class="form-label">Apellidos: </label>
+                <input id="apellidos" type="text" formControlName="apellidos" class="form-control"
+                    [class.is-invalid]="isInvalid('apellidos')" />
+
+                @if (isInvalid('apellidos')) {
+                <div class="invalid-feedback">Los apellidos son obligatorios</div>
+                }
+
+            </div>
+
+            <div class="col-2">
+                <label for="tel" class="form-label">Teléfono: </label>
+                <input id="tel" type="tel" formControlName="tel" class="form-control"
+                    [class.is-invalid]="isInvalid('tel')" />
+
+                @if (isInvalid('tel')) {
+                <div class="invalid-feedback">El teléfono es obligatorio</div>
+                }
+
+            </div>
+
+            <div class="col-3">
+                <label for="email" class="form-label">Email: </label>
+                <input id="email" type="email" formControlName="email" class="form-control"
+                    [class.is-invalid]="isInvalid('email')" />
+
+                @if (isInvalid('email')) {
+                <div class="invalid-feedback">El email es obligatorio</div>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="col-3">
+                <label for="nombreMascota" class="form-label">Nombre de la mascota: </label>
+                <input id="nombreMascota" type="text" formControlName="nombreMascota" class="form-control"
+                    [class.is-invalid]="isInvalid('nombreMascota')" />
+
+                @if (isInvalid('nombreMascota')) {
+                <div class="invalid-feedback">El nombre de la mascota es obligatorio</div>
+                }
+
+            </div>
+
+            <div class="col-2">
+                <label for="especie" class="form-label">Especie: </label>
+                <select id="especie" type="text" formControlName="especie" class="form-select"
+                    [class.is-invalid]="isInvalid('especie')">
+                    <option>Perro</option>
+                    <option>Gato</option>
+                    <option>Ave</option>
+                    <option>Otro</option>
+                </select>
+
+                @if (isInvalid('especie')) {
+                <div class="invalid-feedback">Selecciona una especie</div>
+                }
+
+            </div>
+
+            <div class="col-1">
+
+                <label>Sexo:</label>
+
+                <div class="form-check">
+                    <input id="sexo" type="radio" formControlName="sexo" class="form-check-input"
+                        [class.is-invalid]="isInvalid('sexo')">Macho
+                    <label for="sexo" class="form-check-label"></label>
+                </div>
+                <div class="form-check">
+                    <input id="sexo" type="radio" formControlName="sexo" class="form-check-input"
+                        [class.is-invalid]="isInvalid('sexo')">Hembra
+                    <label for="sexo" class="form-check-label"></label>
+                </div>
+
+                @if (isInvalid('sexo')) {
+                <div class="invalid-feedback">Indica el sexo de la mascota</div>
+                }
+
+            </div>
+
+            <div class="col-3">
+                <label for="raza" class="form-label">Raza: </label>
+                <input id="raza" type="text" formControlName="raza" class="form-control"
+                    [class.is-invalid]="isInvalid('raza')" />
+
+                @if (isInvalid('raza')) {
+                <div class="invalid-feedback">Máximo 40 caracteres</div>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="col-2">
+                <label for="edadAnios" class="form-label">Edad en años: </label>
+                <input id="edadAnios" type="number" min="0" max="30" formControlName="edadAnios" class="form-control"
+                    [class.is-invalid]="isInvalid('edadAnios')" />
+
+                @if (isInvalid('edadAnios')) {
+                <div class="invalid-feedback">La edad es obligatoria</div>
+                }
+
+            </div>
+
+            <div class="col-1">
+                <label for="peso" class="form-label">Peso (Kg): </label>
+                <input id="peso" type="number" min="0.1" max="90" step="0.1" formControlName="peso" class="form-control"
+                    [class.is-invalid]="isInvalid('peso')" />
+
+                @if (isInvalid('peso')) {
+                <div class="invalid-feedback">El peso es obligatorio</div>
+                }
+
+            </div>
+
+            <div class="col-2">
+                <label for="numMicrochip" class="form-label">Número del microchip: </label>
+                <input id="numMicrochip" type="text" formControlName="numMicrochip" class="form-control"
+                    [class.is-invalid]="isInvalid('numMicrochip')" />
+
+                @if (isInvalid('numMicrochip')) {
+                <div class="invalid-feedback">El microchip es obligatorio</div>
+                }
+
+            </div>
+
+            <div class="col-2">
+                <label for="pw" class="form-label">Contraseña: </label>
+                <input id="pw" type="text" formControlName="pw" class="form-control"
+                    [class.is-invalid]="isInvalid('pw')" />
+
+                @if (isInvalid('pw')) {
+                <div class="invalid-feedback">Contraseña poco segura</div>
+                }
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <label for="motivoPrimeraVisita" class="form-label">Motivo de primera visita: </label>
+                <textarea id="motivoPrimeraVisita" type="text" formControlName="motivoPrimeraVisita"
+                    class="form-control" style="max-height: 200px;"
+                    [class.is-invalid]="isInvalid('motivoPrimeraVisita')"></textarea>
+
+                @if (isInvalid('motivoPrimeraVisita')) {
+                <div class="invalid-feedback">Describe el motivo de la visita</div>
+                }
+
+            </div>
+
+            <div class="col-2 pt-5">
+                <label for="politicaPrivacidad" class="form-check-label me-2">Política de privacidad: </label>
+                <input id="politicaPrivacidad" type="checkbox" formControlName="politicaPrivacidad"
+                    class="form-check-input" [class.is-invalid]="isInvalid('politicaPrivacidad')">
+
+                @if (isInvalid('politicaPrivacidad')) {
+                <div class="invalid-feedback">Debes aceptar la política de privacidad</div>
+                }
+
+            </div>
+
+            <div class="col-2 pt-5">
+                <label for="recordatorioEmail" class="form-check-label me-2">Recibir emails: </label>
+                <input id="recordatorioEmail" type="checkbox" formControlName="recordatorioEmail"
+                    class="form-check-input" [class.is-invalid]="isInvalid('recordatorioEmail')">
+
+            </div>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-success mt-5" [disabled]="!registerForm.valid">Enviar</button>
+
+    </form>
+
+</div>
