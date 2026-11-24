@@ -1,0 +1,11 @@
+<div class="container marketing">
+    <div class="row">
+
+        @for(m of movieList(); track m.title) {
+        <div class="col-lg-4">
+            <app-popular-movies-item [movie]="m"></app-popular-movies-item>
+        </div>
+        }
+
+    </div>
+</div>
