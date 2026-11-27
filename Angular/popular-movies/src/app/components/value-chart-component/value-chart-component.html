@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="chart-container" style="height: 450px;">
+        @if (data().length) {
+        <ngx-charts-bar-horizontal [results]="data()" [scheme]="colorScheme" [xAxis]="true" [yAxis]="true"
+            [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Puntuación (0-10)" yAxisLabel="Película"
+            [xScaleMax]="10" [showDataLabel]="true" [roundEdges]="true" [gradient]="false">
+        </ngx-charts-bar-horizontal>
+        } @else {
+        <p>Cargando datos...</p>
+        }
+    </div>
+</div>
